@@ -158,7 +158,6 @@ document.addEventListener('keydown', (event) => {
         if(event.code !== 'CapsLock') {
             document.getElementById(`${event.code}`).classList.add('active');
         } 
-        typeText();
         let e = event.code;
         if(e == 'Backspace' || e == 'CapsLock' ||  e == 'ShiftLeft' || e == 'ShiftRight' || e == 'ControlLeft' || e == 'ControlRight' || e == 'MetaLeft' || e == 'AltLeft' || e == 'AltRight') {
             let text = textarea.textContent;
@@ -166,8 +165,9 @@ document.addEventListener('keydown', (event) => {
         } else if (e == 'Enter') {
             textarea.textContent += `\n`;
         } else if(e == 'Tab') {
-            textarea.textContent += '   ';
             event.preventDefault();
+            textarea.textContent += '   ';
+            
         } else if(e == 'Space') {
             textarea.textContent += ' ';
         } else {
@@ -229,7 +229,6 @@ document.addEventListener('keyup', (event) => {
     if(event.code != 'CapsLock') {
         console.log('remove')
         document.getElementById(`${event.code}`).classList.remove('active');
-        typeText();
     } 
     if(event.code == 'ShiftLeft' || event.code == 'ShiftRight') {
         
