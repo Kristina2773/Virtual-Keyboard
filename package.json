@@ -1,0 +1,26 @@
+{
+  "name": "vitual-keyboard",
+  "version": "1.0.0",
+  "description": "virtual keyboard task",
+  "main": "script.js",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^8.15.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kristina2773/Vitual-Keyboard.git"
+  },
+  "keywords": [
+    "virtual-keywords"
+  ],
+  "author": "Kristina2773",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kristina2773/Vitual-Keyboard/issues"
+  },
+  "homepage": "https://github.com/Kristina2773/Vitual-Keyboard#readme"
+}
