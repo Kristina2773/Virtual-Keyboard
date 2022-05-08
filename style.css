@@ -6,7 +6,7 @@
 body {
     background-image: url('./assets/img/bg2.jpg');
     background-repeat: no-repeat;
-    background-size: 100% 500px;
+    background-size: 100% 700px;
     padding: 20px;
 }
 
@@ -90,7 +90,13 @@ body {
     background: rgba(255, 255, 255, 0.13);
 }
 
+@media (max-width: 1280px) {
+    body {
+        background-size: 100% 500px;
+    }
+}
 @media (max-width: 1279px) {
+    
     .textarea {
 
         width: 400px;
