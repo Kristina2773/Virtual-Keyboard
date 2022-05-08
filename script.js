@@ -45,9 +45,6 @@ const idArr = ['Backquote', 'Digit1', 'Digit2', 'Digit3', 'Digit4', 'Digit5', 'D
                 'ControlLeft', 'MetaLeft', 'AltLeft', 'Space', 'AltRight', 'ArrowLeft', 'ArrowDown', 'ArrowRight', 'ControlRight'];
 
 
-
-let KeyboardLang = 'en';
-
 function setLocalStorage(name, val) {
     localStorage.setItem(name, val);
 }
@@ -111,13 +108,10 @@ function createKeys(lang) {
             breakDiv.classList.add('break');
             arr.push(breakDiv);
         }
-    };
+    }
     return arr;
 }
  
-
-let shifts = document.querySelectorAll('.shift');
-
 document.addEventListener('keydown', (event) => {
     if(event.code == 'ShiftLeft' || event.code == 'ShiftRight') {
         if(body.classList.contains('RU')) {
@@ -139,7 +133,8 @@ document.addEventListener('keydown', (event) => {
         typeText();
         let e = event.code;
         if(e == 'Backspace' || e == 'CapsLock' ||  e == 'ShiftLeft' || e == 'ShiftRight' || e == 'ControlLeft' || e == 'ControlRight' || e == 'Win' || e == 'AltLeft' || e == 'AltRight') {
-            textarea.textContent = textarea.textContent;
+            let text = textarea.textContent;
+            textarea.textContent = text;
         } else if (e == 'Enter') {
             textarea.textContent += `\n`;
         } else if(e == 'Tab') {
@@ -186,14 +181,14 @@ document.addEventListener('keydown', (event) => {
     if(event.code == 'CapsLock') {
         let lettersKey = document.querySelectorAll('.letters');
         changeRegistr(lettersKey); 
-    };
+    }
     if(event.code == 'Backspace') {
         let content = textarea.textContent.toString();
         let arr = content.split('');
         arr.pop();
         let resultArr = arr.join('');
         textarea.textContent = `${resultArr}`;
-    };
+    }
 });
 
 document.addEventListener('mousedown', (event) => {
