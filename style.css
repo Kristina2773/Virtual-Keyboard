@@ -90,7 +90,7 @@ body {
     background: rgba(255, 255, 255, 0.13);
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1440px) {
     body {
         background-size: 100% 500px;
     }
