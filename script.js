@@ -136,7 +136,7 @@ function createKeys(lang) {
             }
         } 
                 
-        if(lang[i] !== 'Backspace' && lang[i] !== 'Capslock' && lang[i] !== 'Shift' && lang[i] !== 'Enter' && lang[i] !== ' Shift' && lang[i] !== 'Ctrl' && lang[i] !== 'Win'  && lang[i] !== 'Alt' && lang[i] != 'TAB') {
+        if(lang[i] !== 'Backspace' && lang[i] !== 'Capslock' && lang[i] !== 'Shift' && lang[i] !== 'Enter' && lang[i] !== ' Shift' && lang[i] !== 'Ctrl' && lang[i] !== 'Win'  && lang[i] !== 'Alt' && lang[i] !== 'TAB') {
             keyDiv.classList.add('letters');
         }
         if (lang[i] == '') {
@@ -222,7 +222,6 @@ document.addEventListener('keydown', (event) => {
             let lettersKey = document.querySelectorAll('.letters');
             changeRegistr(lettersKey);
         }
-       
     }
 });
 document.addEventListener('keyup', (event) => {
@@ -230,6 +229,7 @@ document.addEventListener('keyup', (event) => {
         console.log('remove')
         document.getElementById(`${event.code}`).classList.remove('active');
     } 
+    
     if(event.code == 'ShiftLeft' || event.code == 'ShiftRight') {
         
         if (keyboardWrapper.classList.contains('caps')) {
@@ -253,12 +253,13 @@ document.addEventListener('keyup', (event) => {
                 keyboardWrapper.append(createWrapper(createKeys(KeyboardArrEN)));
             }
         }
+        typeText();
+        controlBackspace();
     } 
-    
     controlCaps();
 });
 
-
+typeText();
 function controlCaps() {
     let capslock = document.querySelector('.capslock'); 
     capslock.addEventListener('click', () => {
@@ -330,6 +331,7 @@ document.addEventListener('mouseup', (event) => {
             }
         }
         controlCaps(); 
+        controlBackspace();
         typeText();
     }
     
@@ -425,12 +427,12 @@ function typeText() {
     let textarea = document.querySelector('.textarea');
     keyboardKey.forEach(k_key => {
         k_key.addEventListener('click', () => {
-            if(k_key.classList.contains('letters')) {
+            if (k_key.classList.contains('letters')) {
                 textarea.textContent += k_key.textContent;
             }
             if (k_key.textContent == 'Enter') {
                 textarea.textContent += `\n`;
-            } else if(k_key.textContent == 'TAB') {
+            } else if (k_key.textContent == 'TAB') {
                 textarea.textContent += '    ';
             } else if(k_key.textContent == '') {
                 textarea.textContent += ' ';
