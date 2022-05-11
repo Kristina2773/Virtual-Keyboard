@@ -29,7 +29,7 @@ body {
     bottom: 0;
     width: 100%;
     padding: 5px 0;
-    background: #340041;
+    background: rgba(52, 0, 65, 0.9);
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
     user-select: none;
     height: 260px;
